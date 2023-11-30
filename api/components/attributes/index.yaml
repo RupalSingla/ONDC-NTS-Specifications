@@ -1,0 +1,4 @@
+ondc-ret: 
+  attribute_set:
+    $ref: './ondc-ret/index.yaml'
+

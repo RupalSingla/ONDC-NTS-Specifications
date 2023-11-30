@@ -1,0 +1,24 @@
+bap_catalog_status_uri:
+  examples:
+    - summary: Request Catalog and Store Rejection Report
+      description: TBD
+      value:
+        $ref: "./bap_catalog_status_uri/bap_catalog_status_uri-request.yaml"
+(Response)bap_catalog_status_uri:
+  examples:
+    - summary: In-Progress Response for Catalog and Store Rejection Report
+      description: TBD
+      value:
+        $ref: "./bap_catalog_status_uri/bap_catalog_status_uri-in-progress-response.yaml"
+    - summary: Success Response for Catalog and Store Rejection Report
+      description: TBD
+      value:
+        $ref: "./bap_catalog_status_uri/bap_catalog_status_uri-success-response.yaml"
+    - summary: Error Response for Catalog and Store Rejection Report
+      description: TBD
+      value:
+        $ref: "./bap_catalog_status_uri/bap_catalog_status_uri-error-response.yaml"
+    - summary: Expired Response for Catalog and Store Rejection Report
+      description: TBD
+      value:
+        $ref: "./bap_catalog_status_uri/bap_catalog_status_uri-expired-response.yaml"

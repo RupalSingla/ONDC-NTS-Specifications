@@ -1,0 +1,4 @@
+(Response)bap_catalog_status_uri:
+  message:
+    catalog:
+      $ref: "./tag-group.yaml#/payment"

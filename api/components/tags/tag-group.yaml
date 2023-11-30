@@ -1,0 +1,9 @@
+catalog:
+  tags: 
+    - code: CATALOG_PROCESSING              
+      description : Combinations of the catalog processing elements
+      reference: <PR/Issue/Discussion Links md format text>
+      list:
+        - code: MIN_PROCESS_DURATION           
+          description : Minimum processing duration
+          reference: <PR/Issue/Discussion Links md format text>

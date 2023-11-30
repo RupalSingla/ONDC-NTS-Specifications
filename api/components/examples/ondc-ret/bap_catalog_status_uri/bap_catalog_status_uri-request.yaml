@@ -1,0 +1,11 @@
+context:
+  country: IND
+  domain: ONDC:RET10
+  timestamp: '2023-09-26T23:04:05.254Z'
+  action: on_search
+  bap_id: example-test-bap.com
+  bpp_id: example-test-bpp.com
+  transaction_id: T1
+  message_id: M1
+  city: 'std:080'
+  core_version: 1.2.0

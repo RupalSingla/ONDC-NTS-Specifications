@@ -1,0 +1,5 @@
+ondc-ret:
+  summary: ondc-ret
+  description: Retail Catalog and Store Rejection Report- Framework
+  example_set:
+    $ref: "./ondc-ret/ondc-ret.yaml"

@@ -1,0 +1,15 @@
+status:
+  code:
+    - code: SUCCESS
+      description: Buyer NP has Successfully ingested all the sellers and catalog and thesellers.
+      reference: <PR/Issue/Discussion Links md format text
+    - code: IN_PROGRESS
+      description: Catalog status is still in progress and Minimum processing time is given
+      reference: <PR/Issue/Discussion Links md format text
+    - code: EXPIRED
+      description: Buyer NP couldn’t provide the catalog for the said transaction ID due to time-out.
+      reference: <PR/Issue/Discussion Links md format text
+    - code: ERRORS
+      description: Buyer NP will provide an item and catalog level error code
+      reference: <PR/Issue/Discussion Links md format text
+      

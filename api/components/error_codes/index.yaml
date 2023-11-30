@@ -1,0 +1,24 @@
+code:
+  - Event: ERROR
+    Description: >-
+      ONDC is defining a set of standard 5 digit error codes, with standard notation. The various digits and the combinations of the standard error codes can be interpreted to identify a particular issue. The notation of the error code is as follows
+
+      XX - Y - ZZ
+      Error level Error type Error reason
+      Provider or Item Business or Tech Standard error reason
+
+      Possible values for XX
+      90 - Provider or store level
+      91 - Item level
+      Possible values for Y
+      0 - Business reason
+      1 - Tech reason
+      Possible values for ZZ
+      Eg for a Buyer NP can decide to drop a store due to fulfilment rate being < 20% (declared as a
+      part of their sorting and filtering criterion). In this case, the response has to be with a
+      standard error code : ‘90001’ (illustrative only) along with a message “Fulfillment rate below
+      20%” for the said provider ID. Here, the error code 90001 will denote that the Buyer App is
+      rejecting at provider level (90), due to a business reason (0) and because the store’s
+      fulfilment rate is below 20% (01)
+    From: BAP
+    code: XXYZZ

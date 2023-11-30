@@ -1,0 +1,8 @@
+bap_catalog_status_uri:
+  context: &context
+    $ref: "./context.yaml"
+(Response)bap_catalog_status_uri:
+  context: *context
+  message:
+    catalog:
+      status: "./status.yaml"

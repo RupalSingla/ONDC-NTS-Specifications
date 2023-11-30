@@ -1,0 +1,9 @@
+/<bap_catalog_status_uri>:
+  context:
+    domain:
+      code:
+        required: mandatory
+        usage: ONDC:RET10
+        description: Represents Network Domain
+        owner: BAP
+        type: string
