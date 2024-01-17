@@ -19,28 +19,28 @@ issue:
         - code: FLM101
           description: Incorrect amount disbursed
           reference: <PR/Issue/Discussion Links md format text  
-        - code: PMT102
+        - code: PTM102
           description: EMI not deducted
           reference: <PR/Issue/Discussion Links md format text 
-        - code: PMT103
+        - code: PTM103
           description: Incorrect amount debited against the EMI
           reference: <PR/Issue/Discussion] Links md format text  
-        - code: PMT104
+        - code: PTM104
           description: EMI deducted twice
           reference: <PR/Issue/Discussion Links md format text
-        - code: PMT105
+        - code: PTM105
           description: Automatic debits not canceled after loan closure
           reference: <PR/Issue/Discussion Links md format text   
-        - code: PMT106
+        - code: PTM106
           description: Issues with payment receipts and acknowledgment
           reference: <PR/Issue/Discussion Links md format text
-        - code: PMT107
+        - code: PTM107
           description: Unable to prepay or make partpay 
           reference: <PR/Issue/Discussion Links md format text  
-        - code: PMT108
+        - code: PTM108
           description: Prepayment not reflecting in loan summary
           reference: <PR/Issue/Discussion Links md format text 
-        - code: PMT109
+        - code: PTM109
           description: incorrect fees charged even during the cool-off period
           reference: <PR/Issue/Discussion Links md format text  
         - code: PMT110
