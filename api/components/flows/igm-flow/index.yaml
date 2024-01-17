@@ -16,7 +16,7 @@ details:
         Seller App ->>+ Buyer App : On_ISSUE _STATUS (Seller app providing status update on the complaint  )
         # Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
          Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-           Buyer App ->>+ Buyer:  ISSUE CLOSED
+        Buyer App ->>+ Buyer:  ISSUE CLOSED
 references: if any
 steps:
   - summary: issue
@@ -34,13 +34,14 @@ steps:
            Buyer App  ->>+ Seller App: ISSUE 
            end
             Seller App ->>+ Buyer App : ON_ISSUE (Seller App started processing the issue)
-          #  Seller App ->>-Buyer App: Seller App started processing the issue
+           Seller App ->>-Buyer App: Seller App started processing the issue
            Buyer App  ->>+ Seller App: ISSUE STATUS
            Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
            Seller App ->>+ Buyer App : On_ISSUE _STATUS
            Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
             Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-           Buyer App ->>+ Buyer:  ISSUE CLOSED
+             Buyer ->>+ Buyer App: Issue closed
+         
     reference: if any
     example:
       value:
@@ -66,7 +67,7 @@ steps:
            Seller App ->>+ Buyer App : On_ISSUE _STATUS
            Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
             Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-           Buyer App ->>+ Buyer:  ISSUE CLOSED
+           Buyer ->>+ Buyer App:  ISSUE CLOSED
         
     reference: if any
     example:
@@ -93,7 +94,7 @@ steps:
            Seller App ->>+ Buyer App : On_ISSUE _STATUS
            Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
            Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-           Buyer App ->>+ Buyer:  ISSUE CLOSED
+           Buyer ->>+ Buyer App:  ISSUE CLOSED
     reference: if any
     example:
       value:
@@ -119,7 +120,7 @@ steps:
            Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
            end
            Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-           Buyer App ->>+ Buyer:  ISSUE CLOSED
+           Buyer ->>+ Buyer App:  ISSUE CLOSED
     reference: if any
     example:
       value:
