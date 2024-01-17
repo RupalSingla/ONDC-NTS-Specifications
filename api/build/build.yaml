@@ -1024,57 +1024,57 @@ x-enum:
               with the loan provided to the borrower.
             reference: <PR/Issue/Discussion Links md format text
         sub-category:
-          - code: FLM01
+          - code: FLM101
             description: Delay in disbursement/not disbursed
             reference: null
-          - code: FLM02
+          - code: FLM102
             description: Incorrect amount disbursed
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT01
+          - code: PMT103
             description: EMI not deducted
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT02
+          - code: PMT104
             description: Incorrect amount debited against the EMI
             reference: <PR/Issue/Discussion] Links md format text
-          - code: PMT03
+          - code: PMT105
             description: EMI deducted twice
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT04
+          - code: PMT106
             description: Automatic debits not canceled after loan closure
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT05
+          - code: PMT107
             description: Issues with payment receipts and acknowledgment
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT06
+          - code: PMT108
             description: Unable to prepay or make partpay
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT07
+          - code: PMT109
             description: Prepayment not reflecting in loan summary
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT08
+          - code: PMT110
             description: incorrect fees charged even during the cool-off period
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT09
+          - code: PMT111
             description: Loan completion certificate/NOC not received after full payment
             reference: <PR/Issue/Discussion Links md format text
-          - code: PTM09
+          - code: PTM112
             description: RoI related issues
             reference: <PR/Issue/Discussion Links md format text
-          - code: PTM10
+          - code: PTM113
             description: >-
               Interest to be charged as per initial loan offer was 18% however
               the final loan agreement has 20% mentioned
             reference: <PR/Issue/Discussion Links md format text
-          - code: ORD01
+          - code: ORD114
             description: Incorrect info on the credit report
             reference: <PR/Issue/Discussion Links md format text
-          - code: ORD02
+          - code: ORD115
             description: delay in updating payment information
             reference: <PR/Issue/Discussion Links md format text
-          - code: ORD03
+          - code: ORD116
             description: Missing or lost loan documents
             reference: <PR/Issue/Discussion Links md format text
-          - code: ORD04
+          - code: ORD117
             description: Errors in loan agreements or contracts
             reference: <PR/Issue/Discussion Links md format text
   on_issue:
