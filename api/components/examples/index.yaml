@@ -1,6 +1,6 @@
 igm : 
- summary: IGM implementation
- description: IGM examples
+ summary: RSF implementation
+ description: RSF  examples
  example_set:
-   $ref: "./igm/index.yaml"
+   $ref: "./rsf/index.yaml"
  

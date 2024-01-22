@@ -2,36 +2,42 @@
 #    examples:
 #     value:
 #       $ref: "./issue/issue.yaml"
-issue:
+collecto_recon:
   examples:
-    - summary: issue
+    - summary: collector_recon
       description: TBD
       value:
-        $ref: "./issue/issue.yaml"
-on_issue:
+        $ref: "./collector_recon/collector_recon.yaml"
+settle:
    examples:
-    - summary: on_issue
+    - summary: settle
       description: TBD
       value:
-        $ref: "./on_issue/on_issue.yaml"
-issue_status:
+        $ref: "./settle/settle.yaml"
+on_settle:
    examples:
-    - summary: issue_status
+    - summary: on_settle
       description: TBD
       value:
-        $ref: "./issue_status/issue_status.yaml"
-on_issue_status:
+        $ref: "./on_settle/on_settle.yaml"
+receiver_recon:
    examples:
-    - summary: on_issue_status
+    - summary: receiver_recon
       description: TBD
       value:
-        $ref: "./on_issue_status/on_issue_status.yaml"
-issue_closed:
+        $ref: "./receiver_recon/receiver_recon.yaml"
+on_receiver_recon:
   examples:
-    - summary: issue_closed
+    - summary: on_receiver_recon
       description: TBD
       value:
-        $ref: "./issue_closed/issue_closed.yaml"
+        $ref: "./on_receiver_recon/on_receiver_recon.yaml"
+on_collector_recon:
+  examples:
+    - summary: on_collector_recon
+      description: TBD
+      value:
+        $ref: "./on_collector_recon/on_collector_recon.yaml"        
 
 
          

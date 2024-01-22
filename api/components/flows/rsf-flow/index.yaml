@@ -1,4 +1,4 @@
-summary: IGM Flow
+summary: RSF Flow
 details:
  - description: detailed flow 
    mermaid: >-
@@ -19,10 +19,10 @@ details:
         Buyer App ->>+ Buyer:  ISSUE CLOSED
 references: if any
 steps:
-  - summary: issue
-    api: issue
+  - summary: collector_recon
+    api: collector_recon
     details:
-      - description: issue
+      - description: collector_recon
         mermaid: >-
          sequenceDiagram
            title  A buyer raises an issue on the buyer app 
@@ -45,7 +45,7 @@ steps:
     reference: if any
     example:
       value:
-        $ref: "../../examples/igm/issue/issue.yaml"
+        $ref: "../../examples//issue/issue.yaml"
   - summary: on_issue
     api: on_issue
     details:
