@@ -1131,7 +1131,7 @@ x-flows:
              Seller App ->>+ Buyer App : On_ISSUE _STATUS (Seller app providing status update on the complaint  )
              # Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
               Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-                Buyer App ->>+ Buyer:  ISSUE CLOSED
+             Buyer App ->>+ Buyer:  ISSUE CLOSED
     references: if any
     steps:
       - summary: issue
@@ -1149,13 +1149,13 @@ x-flows:
                 Buyer App  ->>+ Seller App: ISSUE 
                 end
                  Seller App ->>+ Buyer App : ON_ISSUE (Seller App started processing the issue)
-               #  Seller App ->>-Buyer App: Seller App started processing the issue
+                Seller App ->>-Buyer App: Seller App started processing the issue
                 Buyer App  ->>+ Seller App: ISSUE STATUS
                 Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
                 Seller App ->>+ Buyer App : On_ISSUE _STATUS
                 Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
                  Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-                Buyer App ->>+ Buyer:  ISSUE CLOSED
+                  Buyer ->>+ Buyer App: Issue closed
         reference: if any
         example:
           value: &ref_1
@@ -1240,7 +1240,7 @@ x-flows:
                 Seller App ->>+ Buyer App : On_ISSUE _STATUS
                 Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
                  Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-                Buyer App ->>+ Buyer:  ISSUE CLOSED
+                Buyer ->>+ Buyer App:  ISSUE CLOSED
         reference: if any
         example:
           value: &ref_2
@@ -1297,7 +1297,7 @@ x-flows:
                 Seller App ->>+ Buyer App : On_ISSUE _STATUS
                 Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
                 Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-                Buyer App ->>+ Buyer:  ISSUE CLOSED
+                Buyer ->>+ Buyer App:  ISSUE CLOSED
         reference: if any
         example:
           value: &ref_3
@@ -1338,7 +1338,7 @@ x-flows:
                 Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
                 end
                 Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-                Buyer App ->>+ Buyer:  ISSUE CLOSED
+                Buyer ->>+ Buyer App:  ISSUE CLOSED
         reference: if any
         example:
           value: &ref_4
@@ -1372,18 +1372,6 @@ x-flows:
                         person:
                           name: Jane Doe
                       cascaded_level: 1
-                    - respondent_action: RESOLVED
-                      short_desc: Complaint resolved
-                      updated_at: '2023-01-15T10:31:00.523Z'
-                      updated_by:
-                        org:
-                          name: sellerapp.com::ONDC:RET10
-                        contact:
-                          phone: '9450394140'
-                          email: respondentapp@respond.com
-                        person:
-                          name: Jane Doe
-                      cascaded_level: 1
                 created_at: '2023-01-15T10:00:00.469Z'
                 updated_at: '2023-01-15T10:31:00.523Z'
                 resolution_provider:
@@ -1391,7 +1379,7 @@ x-flows:
                     type: TRANSACTION-COUNTERPARTY-NP
                     organization:
                       org:
-                        name: sellerapp.com::ONDC:RET10
+                        name: sellerapp.com
                       contact:
                         phone: '9059304940'
                         email: email@resolutionproviderorg.com
@@ -1439,6 +1427,55 @@ x-examples:
           - summary: on_issue_status
             description: TBD
             value: *ref_4
+      issue_closed:
+        examples:
+          - summary: issue_closed
+            description: TBD
+            value:
+              context:
+                domain: ONDC:FIS12
+                country: IND
+                city: '*'
+                action: issue
+                core_version: 1.0.0
+                bap_id: buyerapp.com
+                bap_uri: https://buyerapp.com/ondc
+                bpp_id: sellerapp.com
+                bpp_uri: https://sellerapp.com/ondc
+                transaction_id: T1
+                message_id: M1
+                timestamp: '2023-01-15T10:10:01.142Z'
+              message:
+                issue:
+                  id: b6f88798-baae-4534-9b47-0a95a5054997
+                  status: CLOSED
+                  issue_actions:
+                    complainant_actions:
+                      - complainant_action: OPEN
+                        short_desc: test, Complaint created
+                        updated_at: 2023-12-19T12:25:12.974Z
+                        updated_by:
+                          org:
+                            name: sellerapp.com/ondc
+                          contact:
+                            phone: '9963548005'
+                            email: buyer@adya.ai
+                          person:
+                            name: Buyer Admin
+                      - complainant_action: CLOSE
+                        short_desc: Complaint closed
+                        updated_at: 2023-12-19T13:06:39.576Z
+                        updated_by:
+                          org:
+                            name: preprod.ondc.adya.ai::ONDC:RET12
+                          contact:
+                            phone: '9963548005'
+                            email: buyer@adya.ai
+                          person:
+                            name: Buyer Admin
+                  rating: THUMBS-UP
+                  created_at: 2023-12-19T12:25:12.974Z
+                  updated_at: 2023-12-19T13:06:39.576Z
 x-attributes:
   IGM:
     attribute_set:
