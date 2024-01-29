@@ -3,20 +3,20 @@ details:
  - description: detailed flow 
    mermaid: >-
      sequenceDiagram
-        title  A buyer raises an issue on the buyer app 
-        participant Buyer 
-        participant Buyer App
-        participant Seller App
-        Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-        Buyer App  ->>+ Seller App: ISSUE 
-        Seller App ->>+ Buyer App : ON_ISSUE (Seller App started processing the issue)
-        # Seller App ->>-Buyer App: Seller App started processing the issue
-        Buyer App  ->>+ Seller App: ISSUE STATUS(Buyer app requesting status update on the complaint)
-        # Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-        Seller App ->>+ Buyer App : On_ISSUE _STATUS (Seller app providing status update on the complaint  )
-        # Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-         Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-        Buyer App ->>+ Buyer:  ISSUE CLOSED
+           title RSF detailed flow diagram
+           participant Collector/RSP
+           participant  Settlement Agency
+           participant Receiver
+           
+           Collector/RSP ->>+  Settlement Agency: settle API
+          Settlement Agency ->>+ Collector/RSP : on_settle API
+          Collector/RSP ->>+ Receiver : receiver_recon
+          Receiver ->>+ Collector/RSP : on_receiver_recon 
+          Collector/RSP ->>+ Receiver : receiver_recon_status
+           Receiver ->>+ Collector/RSP : on_receiver_recon_status
+
+
+         
 references: if any
 steps:
   - summary: collector_recon
@@ -25,22 +25,20 @@ steps:
       - description: collector_recon
         mermaid: >-
          sequenceDiagram
-           title  A buyer raises an issue on the buyer app 
-           participant Buyer 
-           participant Buyer App
-           participant Seller App
-           rect rgb(0,195,255)
-           Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-           Buyer App  ->>+ Seller App: ISSUE 
-           end
-            Seller App ->>+ Buyer App : ON_ISSUE (Seller App started processing the issue)
-           Seller App ->>-Buyer App: Seller App started processing the issue
-           Buyer App  ->>+ Seller App: ISSUE STATUS
-           Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-           Seller App ->>+ Buyer App : On_ISSUE _STATUS
-           Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-            Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-             Buyer ->>+ Buyer App: Issue closed
+           title RSF detailed flow diagram
+           participant Collector/RSP
+           participant  Settlement Agency
+           participant Receiver
+           
+           Collector/RSP ->>+  Settlement Agency: settle API
+          Settlement Agency ->>+ Collector/RSP : on_settle API
+          Collector/RSP ->>+ Receiver : receiver_recon
+          Receiver ->>+ Collector/RSP : on_receiver_recon 
+          Collector/RSP ->>+ Receiver : receiver_recon_status
+           Receiver ->>+ Collector/RSP : on_receiver_recon_status
+
+
+         
          
     reference: if any
     example:
@@ -51,23 +49,21 @@ steps:
     details:
       - description: on_issue
         mermaid: >-
-         sequenceDiagram
-           title  A buyer raises an issue on the buyer app 
-           participant Buyer 
-           participant Buyer App
-           participant Seller App
-           Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-           Buyer App  ->>+ Seller App: ISSUE 
-           rect rgb(0,195,255)
-           Seller App ->>+ Buyer App : ON_ISSUE
-           Seller App ->>-Buyer App: Seller App started processing the issue
-           end
-           Buyer App  ->>+ Seller App: ISSUE STATUS
-           Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-           Seller App ->>+ Buyer App : On_ISSUE _STATUS
-           Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-            Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-           Buyer ->>+ Buyer App:  ISSUE CLOSED
+          sequenceDiagram
+           title RSF detailed flow diagram
+           participant Collector/RSP
+           participant  Settlement Agency
+           participant Receiver
+           
+           Collector/RSP ->>+  Settlement Agency: settle API
+          Settlement Agency ->>+ Collector/RSP : on_settle API
+          Collector/RSP ->>+ Receiver : receiver_recon
+          Receiver ->>+ Collector/RSP : on_receiver_recon 
+          Collector/RSP ->>+ Receiver : receiver_recon_status
+           Receiver ->>+ Collector/RSP : on_receiver_recon_status
+
+
+         
         
     reference: if any
     example:
@@ -79,22 +75,20 @@ steps:
       - description: issue_status
         mermaid: >-
          sequenceDiagram
-           title  A buyer raises an issue on the buyer app 
-           participant Buyer 
-           participant Buyer App
-           participant Seller App
-           Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-           Buyer App  ->>+ Seller App: ISSUE 
-           Seller App ->>+ Buyer App : ON_ISSUE
-           Seller App ->>-Buyer App: Seller App started processing the issue
-           rect rgb(0,195,255)
-           Buyer App  ->>+ Seller App: ISSUE STATUS
-           Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-           end
-           Seller App ->>+ Buyer App : On_ISSUE _STATUS
-           Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-           Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-           Buyer ->>+ Buyer App:  ISSUE CLOSED
+           title RSF detailed flow diagram
+           participant Collector/RSP
+           participant  Settlement Agency
+           participant Receiver
+           
+           Collector/RSP ->>+  Settlement Agency: settle API
+          Settlement Agency ->>+ Collector/RSP : on_settle API
+          Collector/RSP ->>+ Receiver : receiver_recon
+          Receiver ->>+ Collector/RSP : on_receiver_recon 
+          Collector/RSP ->>+ Receiver : receiver_recon_status
+           Receiver ->>+ Collector/RSP : on_receiver_recon_status
+
+
+         
     reference: if any
     example:
       value:
@@ -104,23 +98,21 @@ steps:
     details:
       - description: on_issue_status
         mermaid: >-
-         sequenceDiagram
-           title  A buyer raises an issue on the buyer app 
-           participant Buyer 
-           participant Buyer App
-           participant Seller App
-           Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-           Buyer App  ->>+ Seller App: ISSUE 
-           Seller App ->>+ Buyer App : ON_ISSUE
-           Seller App ->>-Buyer App: Seller App started processing the issue
-           Buyer App  ->>+ Seller App: ISSUE STATUS
-           Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-           rect rgb(0,195,255)
-           Seller App ->>+ Buyer App : On_ISSUE _STATUS
-           Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-           end
-           Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-           Buyer ->>+ Buyer App:  ISSUE CLOSED
+           sequenceDiagram
+           title RSF detailed flow diagram
+           participant Collector/RSP
+           participant  Settlement Agency
+           participant Receiver
+           
+           Collector/RSP ->>+  Settlement Agency: settle API
+           Settlement Agency ->>+ Collector/RSP : on_settle API
+           Collector/RSP ->>+ Receiver : receiver_recon
+           Receiver ->>+ Collector/RSP : on_receiver_recon 
+           Collector/RSP ->>+ Receiver : receiver_recon_status
+           Receiver ->>+ Collector/RSP : on_receiver_recon_status
+
+
+         
     reference: if any
     example:
       value:
