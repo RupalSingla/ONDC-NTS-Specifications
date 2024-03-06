@@ -1024,58 +1024,83 @@ x-enum:
               with the loan provided to the borrower.
             reference: <PR/Issue/Discussion Links md format text
         sub-category:
-          - code: FLM101
-            description: Delay in disbursement/not disbursed
+          - code: FLM201
+            description: Policy Issuance Status - policy document not received
             reference: null
-          - code: FLM102
-            description: Incorrect amount disbursed
+          - code: PMT202
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT103
-            description: EMI not deducted
-            reference: <PR/Issue/Discussion Links md format text
-          - code: PMT104
-            description: Incorrect amount debited against the EMI
+          - code: PMT203
+            description: null
             reference: <PR/Issue/Discussion] Links md format text
-          - code: PMT105
-            description: EMI deducted twice
+          - code: PMT204
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT106
-            description: Automatic debits not canceled after loan closure
+          - code: PMT205
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT107
-            description: Issues with payment receipts and acknowledgment
+          - code: PMT206
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT108
-            description: Unable to prepay or make partpay
+          - code: PMT207
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT109
-            description: Prepayment not reflecting in loan summary
+          - code: PMT208
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT110
-            description: incorrect fees charged even during the cool-off period
+          - code: PMT209
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: PMT111
-            description: Loan completion certificate/NOC not received after full payment
+          - code: ORD210
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: PTM112
-            description: RoI related issues
+          - code: ORD211
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: PTM113
-            description: >-
-              Interest to be charged as per initial loan offer was 18% however
-              the final loan agreement has 20% mentioned
+          - code: ORD212
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: ORD114
-            description: Incorrect info on the credit report
+          - code: ORD213
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: ORD115
-            description: delay in updating payment information
+          - code: ORD214
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: ORD116
-            description: Missing or lost loan documents
+          - code: ORD215
+            description: null
             reference: <PR/Issue/Discussion Links md format text
-          - code: ORD117
-            description: Errors in loan agreements or contracts
+          - code: ORD216
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD217
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD218
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD219
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD220
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD221
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD222
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD223
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD224
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD225
+            description: null
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORD226
+            description: null
             reference: <PR/Issue/Discussion Links md format text
   on_issue:
     message: *ref_0
@@ -1112,328 +1137,206 @@ x-tags:
               - code: MAX_LOAN_AMOUNT
                 description: Maximum amount for the loan which a borrower can take
                 reference: <PR/Issue/Discussion Links md format text>
-x-flows:
-  - summary: IGM Flow
-    details:
-      - description: detailed flow
-        mermaid: |-
-          sequenceDiagram
-             title  A buyer raises an issue on the buyer app 
-             participant Buyer 
-             participant Buyer App
-             participant Seller App
-             Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-             Buyer App  ->>+ Seller App: ISSUE 
-             Seller App ->>+ Buyer App : ON_ISSUE (Seller App started processing the issue)
-             # Seller App ->>-Buyer App: Seller App started processing the issue
-             Buyer App  ->>+ Seller App: ISSUE STATUS(Buyer app requesting status update on the complaint)
-             # Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-             Seller App ->>+ Buyer App : On_ISSUE _STATUS (Seller app providing status update on the complaint  )
-             # Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-              Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-             Buyer App ->>+ Buyer:  ISSUE CLOSED
-    references: if any
-    steps:
-      - summary: issue
-        api: issue
-        details:
-          - description: issue
-            mermaid: |-
-              sequenceDiagram
-                title  A buyer raises an issue on the buyer app 
-                participant Buyer 
-                participant Buyer App
-                participant Seller App
-                rect rgb(0,195,255)
-                Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-                Buyer App  ->>+ Seller App: ISSUE 
-                end
-                 Seller App ->>+ Buyer App : ON_ISSUE (Seller App started processing the issue)
-                Seller App ->>-Buyer App: Seller App started processing the issue
-                Buyer App  ->>+ Seller App: ISSUE STATUS
-                Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-                Seller App ->>+ Buyer App : On_ISSUE _STATUS
-                Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-                 Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-                  Buyer ->>+ Buyer App: Issue closed
-        reference: if any
-        example:
-          value: &ref_1
-            context:
-              domain: ONDC:FIS12
-              country: IND
-              city: '*'
-              action: issue
-              core_version: 1.0.0
-              bap_id: buyerapp.com
-              bap_uri: https://preprod-ondc.addble.com
-              bpp_id: sellerapp.com
-              bpp_uri: https://beta.mystore.in/ondc/1.0/
-              transaction_id: T1
-              message_id: M1
-              timestamp: '2023-01-15T10:00:00.469Z'
-              ttl: PT30S
-            message:
-              issue:
-                id: '1'
-                category: FULFILMENT
-                sub_category: FLM01
-                complainant_info:
-                  person:
-                    name: Sam Manuel
-                  contact:
-                    phone: '9879879870'
-                    email: sam@yahoo.com
-                order_details:
-                  id: 4597f703-e84f-431e-a96a-d147cfa142f9
-                  state: SANCTIONED
-                  provider_id: P1
-                description:
-                  short_desc: Delay in disbursement/not disbursed
-                  Long_desc: Loan not disbursed by the lender
-                  additional_desc:
-                    url: https://buyerapp.com/additonal-details/desc.txt
-                    content_type: text/plain
-                  images:
-                    - http://buyerapp.com/addtional-details/img1.png
-                    - http://buyerapp.com/addtional-details/img2.png
-                source:
-                  network_participant_id: buyerapp.com/ondc
-                  type: CONSUMER
-                expected_response_time:
-                  duration: PT2H
-                expected_resolution_time:
-                  duration: P1D
-                status: OPEN
-                issue_type: ISSUE
-                issue_actions:
-                  complainant_actions:
-                    - complainant_action: OPEN
-                      short_desc: Complaint created
-                      updated_at: '2023-01-15T10:00:00.469Z'
-                      updated_by:
-                        org:
-                          name: buyerapp.com::ONDC:FIS12
-                        contact:
-                          phone: '9450394039'
-                          email: buyerapp@interface.com
-                created_at: '2023-01-15T10:00:00.469Z'
-                updated_at: '2023-01-15T10:00:00.469Z'
-      - summary: on_issue
-        api: on_issue
-        details:
-          - description: on_issue
-            mermaid: |-
-              sequenceDiagram
-                title  A buyer raises an issue on the buyer app 
-                participant Buyer 
-                participant Buyer App
-                participant Seller App
-                Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-                Buyer App  ->>+ Seller App: ISSUE 
-                rect rgb(0,195,255)
-                Seller App ->>+ Buyer App : ON_ISSUE
-                Seller App ->>-Buyer App: Seller App started processing the issue
-                end
-                Buyer App  ->>+ Seller App: ISSUE STATUS
-                Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-                Seller App ->>+ Buyer App : On_ISSUE _STATUS
-                Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-                 Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-                Buyer ->>+ Buyer App:  ISSUE CLOSED
-        reference: if any
-        example:
-          value: &ref_2
-            context:
-              domain: ONDC:FIS12
-              country: IND
-              city: '*'
-              action: on_issue
-              core_version: 1.0.0
-              bap_id: buyerapp.com
-              bap_uri: https://buyerapp.com/ondc
-              bpp_id: sellerapp.com
-              bpp_uri: https://sellerapp.com/ondc
-              transaction_id: T1
-              message_id: M1
-              timestamp: '2023-01-15T10:10:00.142Z'
-            message:
-              issue:
-                id: '1'
-                issue_actions:
-                  respondent_actions:
-                    - respondent_action: PROCESSING
-                      short_desc: Complaint is being processed
-                      updated_at: '2023-01-15T10:10:00.142Z'
-                      updated_by:
-                        org:
-                          name: sellerapp.com/ondc
-                        contact:
-                          phone: '9450394140'
-                          email: respondentapp@respond.com
-                        person:
-                          name: Jane Doe
-                      cascaded_level: 1
-                created_at: '2023-01-15T10:00:00.469Z'
-                updated_at: '2023-01-15T10:10:00.142Z'
-      - summary: issue_status
-        api: issue_status
-        details:
-          - description: issue_status
-            mermaid: |-
-              sequenceDiagram
-                title  A buyer raises an issue on the buyer app 
-                participant Buyer 
-                participant Buyer App
-                participant Seller App
-                Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-                Buyer App  ->>+ Seller App: ISSUE 
-                Seller App ->>+ Buyer App : ON_ISSUE
-                Seller App ->>-Buyer App: Seller App started processing the issue
-                rect rgb(0,195,255)
-                Buyer App  ->>+ Seller App: ISSUE STATUS
-                Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-                end
-                Seller App ->>+ Buyer App : On_ISSUE _STATUS
-                Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-                Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-                Buyer ->>+ Buyer App:  ISSUE CLOSED
-        reference: if any
-        example:
-          value: &ref_3
-            context:
-              domain: ONDC:FIS12
-              country: IND
-              city: '*'
-              action: issue_status
-              core_version: 1.0.0
-              bap_id: buyerapp.com
-              bap_uri: https://buyerapp.com/ondc
-              bpp_id: sellerapp.com
-              bpp_uri: https://sellerapp.com/ondc
-              transaction_id: T1
-              message_id: M2
-              timestamp: '2023-01-15T10:30:00.469Z'
-              ttl: PT30S
-            message:
-              issue_id: '1'
-      - summary: on_issue_status
-        api: on_issue_status
-        details:
-          - description: on_issue_status
-            mermaid: |-
-              sequenceDiagram
-                title  A buyer raises an issue on the buyer app 
-                participant Buyer 
-                participant Buyer App
-                participant Seller App
-                Buyer ->>+ Buyer App: Raise an issue on issue ticket portal on buyer app
-                Buyer App  ->>+ Seller App: ISSUE 
-                Seller App ->>+ Buyer App : ON_ISSUE
-                Seller App ->>-Buyer App: Seller App started processing the issue
-                Buyer App  ->>+ Seller App: ISSUE STATUS
-                Buyer App ->>+ Seller App: Buyer app requesting status update on the complaint
-                rect rgb(0,195,255)
-                Seller App ->>+ Buyer App : On_ISSUE _STATUS
-                Seller App ->>+ Buyer App :Seller app providing status update on the complaint  
-                end
-                Seller App ->>+ Buyer App:  ISSUE Resolution provided 
-                Buyer ->>+ Buyer App:  ISSUE CLOSED
-        reference: if any
-        example:
-          value: &ref_4
-            context:
-              domain: ONDC:FIS12
-              country: IND
-              city: '*'
-              action: on_issue_status
-              core_version: 1.0.0
-              bap_id: buyerapp.com
-              bap_uri: https://buyerapp.com/ondc
-              bpp_id: sellerapp.com
-              bpp_uri: https://sellerapp.com/ondc
-              transaction_id: T1
-              message_id: M2
-              timestamp: '2023-01-15T10:31:00.523Z'
-            message:
-              issue:
-                id: '1'
-                issue_actions:
-                  respondent_actions:
-                    - respondent_action: PROCESSING
-                      short_desc: Complaint is being processed
-                      updated_at: '2023-01-15T10:10:00.142Z'
-                      updated_by:
-                        org:
-                          name: sellerapp.com
-                        contact:
-                          phone: '9450394140'
-                          email: respondentapp@respond.com
-                        person:
-                          name: Jane Doe
-                      cascaded_level: 1
-                created_at: '2023-01-15T10:00:00.469Z'
-                updated_at: '2023-01-15T10:31:00.523Z'
-                resolution_provider:
-                  respondent_info:
-                    type: TRANSACTION-COUNTERPARTY-NP
-                    organization:
-                      org:
-                        name: sellerapp.com
-                      contact:
-                        phone: '9059304940'
-                        email: email@resolutionproviderorg.com
-                      person:
-                        name: resolution provider org contact person name
-                    resolution_support:
-                      chat_link: http://chat-link/respondent
-                      contact:
-                        phone: '9949595059'
-                        email: respondantemail@resolutionprovider.com
-                      gros:
-                        - person:
-                            name: Sam D
-                          contact:
-                            phone: '9605960796'
-                            email: email@gro.com
-                          gro_type: TRANSACTION-COUNTERPARTY-NP-GRO
-                resolution:
-                  short_desc: Loan disbursed
-                  long_desc: For this complaint, loan is now disbursed
-                  action_triggered: CANCEL
-                  refund_amount: '100'
 x-examples:
-  igm:
-    summary: IGM implementation
-    description: IGM examples
+  Motor_igm:
+    summary: IGM moter insurance implementation
+    description: IGM  motor insurance examples
     example_set:
       issue:
         examples:
           - summary: issue
             description: TBD
-            value: *ref_1
+            value:
+              context:
+                domain: ONDC:FIS13
+                country: IND
+                city: '*'
+                action: issue
+                core_version: 1.0.0
+                bap_id: buyerapp.com
+                bap_uri: https://preprod-ondc.addble.com
+                bpp_id: sellerapp.com
+                bpp_uri: https://beta.mystore.in/ondc/1.0/
+                transaction_id: T1
+                message_id: M1
+                timestamp: '2023-01-15T10:00:00.469Z'
+                ttl: PT30S
+              message:
+                issue:
+                  id: '1'
+                  category: FULFILMENT
+                  sub_category: FLM01
+                  complainant_info:
+                    person:
+                      name: Sam Manuel
+                    contact:
+                      phone: '9879879870'
+                      email: sam@yahoo.com
+                  order_details:
+                    id: 4597f703-e84f-431e-a96a-d147cfa142f9
+                    state: SANCTIONED
+                    provider_id: P1
+                  description:
+                    short_desc: Delay in disbursement/not disbursed
+                    Long_desc: Loan not disbursed by the lender
+                    additional_desc:
+                      url: https://buyerapp.com/additonal-details/desc.txt
+                      content_type: text/plain
+                    images:
+                      - http://buyerapp.com/addtional-details/img1.png
+                      - http://buyerapp.com/addtional-details/img2.png
+                  source:
+                    network_participant_id: buyerapp.com/ondc
+                    type: CONSUMER
+                  expected_response_time:
+                    duration: PT2H
+                  expected_resolution_time:
+                    duration: P1D
+                  status: OPEN
+                  issue_type: ISSUE
+                  issue_actions:
+                    complainant_actions:
+                      - complainant_action: OPEN
+                        short_desc: Complaint created
+                        updated_at: '2023-01-15T10:00:00.469Z'
+                        updated_by:
+                          org:
+                            name: buyerapp.com::ONDC:FIS12
+                          contact:
+                            phone: '9450394039'
+                            email: buyerapp@interface.com
+                  created_at: '2023-01-15T10:00:00.469Z'
+                  updated_at: '2023-01-15T10:00:00.469Z'
       on_issue:
         examples:
           - summary: on_issue
             description: TBD
-            value: *ref_2
+            value:
+              context:
+                domain: ONDC:FIS13
+                country: IND
+                city: '*'
+                action: on_issue
+                core_version: 1.0.0
+                bap_id: buyerapp.com
+                bap_uri: https://buyerapp.com/ondc
+                bpp_id: sellerapp.com
+                bpp_uri: https://sellerapp.com/ondc
+                transaction_id: T1
+                message_id: M1
+                timestamp: '2023-01-15T10:10:00.142Z'
+              message:
+                issue:
+                  id: '1'
+                  issue_actions:
+                    respondent_actions:
+                      - respondent_action: PROCESSING
+                        short_desc: Complaint is being processed
+                        updated_at: '2023-01-15T10:10:00.142Z'
+                        updated_by:
+                          org:
+                            name: sellerapp.com/ondc
+                          contact:
+                            phone: '9450394140'
+                            email: respondentapp@respond.com
+                          person:
+                            name: Jane Doe
+                        cascaded_level: 1
+                  created_at: '2023-01-15T10:00:00.469Z'
+                  updated_at: '2023-01-15T10:10:00.142Z'
       issue_status:
         examples:
           - summary: issue_status
             description: TBD
-            value: *ref_3
+            value:
+              context:
+                domain: ONDC:FIS13
+                country: IND
+                city: '*'
+                action: issue_status
+                core_version: 1.0.0
+                bap_id: buyerapp.com
+                bap_uri: https://buyerapp.com/ondc
+                bpp_id: sellerapp.com
+                bpp_uri: https://sellerapp.com/ondc
+                transaction_id: T1
+                message_id: M2
+                timestamp: '2023-01-15T10:30:00.469Z'
+                ttl: PT30S
+              message:
+                issue_id: '1'
       on_issue_status:
         examples:
           - summary: on_issue_status
             description: TBD
-            value: *ref_4
+            value:
+              context:
+                domain: ONDC:FIS13
+                country: IND
+                city: '*'
+                action: on_issue_status
+                core_version: 1.0.0
+                bap_id: buyerapp.com
+                bap_uri: https://buyerapp.com/ondc
+                bpp_id: sellerapp.com
+                bpp_uri: https://sellerapp.com/ondc
+                transaction_id: T1
+                message_id: M2
+                timestamp: '2023-01-15T10:31:00.523Z'
+              message:
+                issue:
+                  id: '1'
+                  issue_actions:
+                    respondent_actions:
+                      - respondent_action: PROCESSING
+                        short_desc: Complaint is being processed
+                        updated_at: '2023-01-15T10:10:00.142Z'
+                        updated_by:
+                          org:
+                            name: sellerapp.com
+                          contact:
+                            phone: '9450394140'
+                            email: respondentapp@respond.com
+                          person:
+                            name: Jane Doe
+                        cascaded_level: 1
+                  created_at: '2023-01-15T10:00:00.469Z'
+                  updated_at: '2023-01-15T10:31:00.523Z'
+                  resolution_provider:
+                    respondent_info:
+                      type: TRANSACTION-COUNTERPARTY-NP
+                      organization:
+                        org:
+                          name: sellerapp.com
+                        contact:
+                          phone: '9059304940'
+                          email: email@resolutionproviderorg.com
+                        person:
+                          name: resolution provider org contact person name
+                      resolution_support:
+                        chat_link: http://chat-link/respondent
+                        contact:
+                          phone: '9949595059'
+                          email: respondantemail@resolutionprovider.com
+                        gros:
+                          - person:
+                              name: Sam D
+                            contact:
+                              phone: '9605960796'
+                              email: email@gro.com
+                            gro_type: TRANSACTION-COUNTERPARTY-NP-GRO
+                  resolution:
+                    short_desc: Loan disbursed
+                    long_desc: For this complaint, loan is now disbursed
+                    action_triggered: CANCEL
+                    refund_amount: '100'
       issue_closed:
         examples:
           - summary: issue_closed
             description: TBD
             value:
               context:
-                domain: ONDC:FIS12
+                domain: ONDC:FIS13
                 country: IND
                 city: '*'
                 action: issue
