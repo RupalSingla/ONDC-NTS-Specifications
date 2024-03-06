@@ -1,6 +1,6 @@
-igm : 
- summary: IGM implementation
- description: IGM examples
+Motor_igm : 
+ summary: IGM moter insurance implementation
+ description: IGM  motor insurance examples
  example_set:
-   $ref: "./igm/index.yaml"
+   $ref: "./Motor_igm/index.yaml"
  

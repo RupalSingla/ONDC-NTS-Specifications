@@ -1,3 +1,4 @@
 IGM:
   attribute_set:
     $ref: "./IGM/index.yaml"
+    # $ref: "./IGM-Insurance/index.yaml"

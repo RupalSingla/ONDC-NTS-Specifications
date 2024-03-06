@@ -13,58 +13,86 @@ issue:
           reference: <PR/Issue/Discussion Links md format text         
 
       sub-category: 
-        - code: FLM101
-          description: Delay in disbursement/not disbursed
+        - code: FLM201
+          description: Policy Issuance Status - policy document not received 
           reference: 
-        - code: FLM102
-          description: Incorrect amount disbursed
-          reference: <PR/Issue/Discussion Links md format text  
-        - code: PMT103
-          description: EMI not deducted
+    
+        - code: PMT202
+          description: 
           reference: <PR/Issue/Discussion Links md format text 
-        - code: PMT104
-          description: Incorrect amount debited against the EMI
+        - code: PMT203
+          description: 
           reference: <PR/Issue/Discussion] Links md format text  
-        - code: PMT105
-          description: EMI deducted twice
+        - code: PMT204
+          description: 
           reference: <PR/Issue/Discussion Links md format text
-        - code: PMT106
-          description: Automatic debits not canceled after loan closure
+        - code: PMT205
+          description: 
           reference: <PR/Issue/Discussion Links md format text   
-        - code: PMT107
-          description: Issues with payment receipts and acknowledgment
+        - code: PMT206
+          description:
           reference: <PR/Issue/Discussion Links md format text
-        - code: PMT108
-          description: Unable to prepay or make partpay 
+        - code: PMT207
+          description: 
           reference: <PR/Issue/Discussion Links md format text  
-        - code: PMT109
-          description: Prepayment not reflecting in loan summary
+        - code: PMT208
+          description: 
           reference: <PR/Issue/Discussion Links md format text 
-        - code: PMT110
-          description: incorrect fees charged even during the cool-off period
+        - code: PMT209
+          description: 
           reference: <PR/Issue/Discussion Links md format text  
-        - code: PMT111
-          description: Loan completion certificate/NOC not received after full payment
-          reference: <PR/Issue/Discussion Links md format text 
-        - code: PTM112
-          description: RoI related issues
-          reference: <PR/Issue/Discussion Links md format text 
-        - code: PTM113
-          description: Interest to be charged as per initial loan offer was 18% however the final loan agreement has 20% mentioned
-          reference: <PR/Issue/Discussion Links md format text 
 
-        - code: ORD114
-          description: Incorrect info on the credit report
+        - code: ORD210
+          description: 
           reference: <PR/Issue/Discussion Links md format text 
-        - code: ORD115
-          description: delay in updating payment information
+        - code: ORD211
+          description: 
           reference: <PR/Issue/Discussion Links md format text 
-        - code: ORD116
-          description: Missing or lost loan documents
+        - code: ORD212
+          description: 
           reference: <PR/Issue/Discussion Links md format text
-        - code: ORD117
-          description: Errors in loan agreements or contracts
-          reference: <PR/Issue/Discussion Links md format text  
+        - code: ORD213
+          description: 
+          reference: <PR/Issue/Discussion Links md format text
+        - code: ORD214
+          description: 
+          reference: <PR/Issue/Discussion Links md format text 
+        - code: ORD215
+          description: 
+          reference: <PR/Issue/Discussion Links md format text 
+        - code: ORD216
+          description: 
+          reference: <PR/Issue/Discussion Links md format text
+        - code: ORD217
+          description: 
+          reference: <PR/Issue/Discussion Links md format text
+        - code: ORD218
+          description:
+          reference: <PR/Issue/Discussion Links md format text 
+        - code: ORD219
+          description:
+          reference: <PR/Issue/Discussion Links md format text 
+        - code: ORD220
+          description:
+          reference: <PR/Issue/Discussion Links md format text
+        - code: ORD221
+          description: 
+          reference: <PR/Issue/Discussion Links md format text 
+        - code: ORD222
+          description: 
+          reference: <PR/Issue/Discussion Links md format text 
+        - code: ORD223
+          description: 
+          reference: <PR/Issue/Discussion Links md format text 
+        - code: ORD224
+          description: 
+          reference: <PR/Issue/Discussion Links md format text
+        - code: ORD225
+          description: 
+          reference: <PR/Issue/Discussion Links md format text
+        - code: ORD226
+          description: 
+          reference: <PR/Issue/Discussion Links md format text                
 on_issue:
   message: *message
  
