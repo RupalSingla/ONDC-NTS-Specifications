@@ -82,7 +82,7 @@ function flattenObject(obj, prefix = '', result = {}) {
   return result;
 }
 
-function displayTable() {
+ function displayTable() {
   var dropdown1 = document.getElementById('dropdown1');
   var dropdown2 = document.getElementById('dropdown2');
   var dropdown4 = document.getElementById('dropdown4');

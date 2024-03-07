@@ -14,84 +14,84 @@ issue:
 
       sub-category: 
         - code: FLM201
-          description: Policy Issuance Status - policy document not received 
-          reference: 
+          description: Issuance - Policy Issuance Status policy document not received 
+          reference: <PR/Issue/Discussion Links md format text
     
         - code: PMT202
-          description: 
+          description:  Issuance - Incorrect premium Amount
           reference: <PR/Issue/Discussion Links md format text 
         - code: PMT203
-          description: 
+          description:  Issuance - Payment related issues
           reference: <PR/Issue/Discussion] Links md format text  
         - code: PMT204
-          description: 
+          description:  Issuance - Refund amount mismatch
           reference: <PR/Issue/Discussion Links md format text
         - code: PMT205
-          description: 
+          description:  Issuance - Renewal premium clarification
           reference: <PR/Issue/Discussion Links md format text   
         - code: PMT206
-          description:
+          description: Issuance - Auto Debit related clarification
           reference: <PR/Issue/Discussion Links md format text
         - code: PMT207
-          description: 
+          description:  Issuance - TDS Certificate issuance
           reference: <PR/Issue/Discussion Links md format text  
         - code: PMT208
-          description: 
+          description:  Issuance - GSTIN
           reference: <PR/Issue/Discussion Links md format text 
         - code: PMT209
-          description: 
+          description:  Issuance - EMI Calculation
           reference: <PR/Issue/Discussion Links md format text  
 
         - code: ORD210
-          description: 
+          description: Issuance -policy benefits & features
           reference: <PR/Issue/Discussion Links md format text 
         - code: ORD211
-          description: 
+          description: Issuance -Result of Health Checkup / Manual verification of vehicle
           reference: <PR/Issue/Discussion Links md format text 
         - code: ORD212
-          description: 
+          description: Issuance -Change /Correction of personal details Name, DOB, Address, PED etc 
           reference: <PR/Issue/Discussion Links md format text
         - code: ORD213
-          description: 
+          description: Issuance -Addition of Family Member/New Born
           reference: <PR/Issue/Discussion Links md format text
         - code: ORD214
-          description: 
+          description: Issuance -Ownership Transfer
           reference: <PR/Issue/Discussion Links md format text 
         - code: ORD215
-          description: 
+          description: Issuance -Customer Details
           reference: <PR/Issue/Discussion Links md format text 
         - code: ORD216
-          description: 
+          description: Issuance -Vehicle Details Updation
           reference: <PR/Issue/Discussion Links md format text
         - code: ORD217
-          description: 
+          description: Issuance -Hypothecation update 
           reference: <PR/Issue/Discussion Links md format text
         - code: ORD218
-          description:
+          description: Issuance -Vahan Update
           reference: <PR/Issue/Discussion Links md format text 
         - code: ORD219
-          description:
+          description: Issuance -Addition or Removal of Add Ons
           reference: <PR/Issue/Discussion Links md format text 
         - code: ORD220
-          description:
+          description: Issuance -Policy Cancellation initiation and status - not able to cancel the policy
           reference: <PR/Issue/Discussion Links md format text
         - code: ORD221
-          description: 
+          description: Issuance -Claim Status 
           reference: <PR/Issue/Discussion Links md format text 
         - code: ORD222
-          description: 
+          description: Issuance -Portal Issues
           reference: <PR/Issue/Discussion Links md format text 
         - code: ORD223
-          description: 
+          description: Issuance - Delay in Claim processing  
           reference: <PR/Issue/Discussion Links md format text 
         - code: ORD224
-          description: 
+          description: Issuance -Claim Repudiation 
           reference: <PR/Issue/Discussion Links md format text
         - code: ORD225
-          description: 
+          description: Issuance -TPA Change during renewals
           reference: <PR/Issue/Discussion Links md format text
         - code: ORD226
-          description: 
+          description: Issuance - Nominee Updation
           reference: <PR/Issue/Discussion Links md format text                
 on_issue:
   message: *message
