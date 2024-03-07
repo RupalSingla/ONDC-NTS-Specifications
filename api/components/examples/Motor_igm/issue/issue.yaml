@@ -16,7 +16,7 @@ message:
   issue:
     id: "1"
     category: FULFILMENT
-    sub_category: FLM01
+    sub_category: FLM201
     complainant_info:
        person:
         name: Sam Manuel
@@ -28,8 +28,8 @@ message:
       state: SANCTIONED
       provider_id: P1
     description:
-      short_desc: Delay in disbursement/not disbursed
-      Long_desc: Loan not disbursed by the lender
+      short_desc:  Policy Issuance Status policy document not received 
+      Long_desc:  Policy Issuance Status policy document not received 
       additional_desc:
         url: https://buyerapp.com/additonal-details/desc.txt
         content_type: text/plain
