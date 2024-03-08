@@ -984,7 +984,7 @@ servers:
     url: https://virtserver.swaggerhub.com/ONDC/ONDC-Protocol-IGM/1.0.0
 x-enum:
   issue:
-    message: &ref_0
+    message:
       issue:
         catagory:
           - code: FULFILMENT
@@ -1087,13 +1087,129 @@ x-enum:
           - code: ORD226
             description: Issuance - Nominee Updation
             reference: <PR/Issue/Discussion Links md format text
-        order_details: null
+        order_details:
+          state:
+            - code: GRANTED
+              description: Issuance - Nominee Updation
+              reference: <PR/Issue/Discussion Links md format text
+            - code: PROCESSING
+              description: Issuance - Nominee Updation
+              reference: <PR/Issue/Discussion Links md format text
+            - code: CLAIM_INITIATED
+              description: Describes if claim has been initiated
+              reference: <PR/Issue/Discussion Links md format text
+            - code: CLAIM_PROCESSING
+              description: Describes if claim is under process
+              reference: <PR/Issue/Discussion Links md format text
+            - code: CLAIM_PROCESSED
+              description: Describes if claim has been processed
+              reference: <PR/Issue/Discussion Links md format text
+            - code: CLAIM_REJECTED
+              description: Describes if claim has been rejected
+              reference: <PR/Issue/Discussion Links md format text
+            - code: ONLINE_RENEW
+              description: Describes if renewal is online
+              reference: <PR/Issue/Discussion Links md format text
+            - code: RENEWAL_PROCESSED
+              description: Describes if renewal has been processed
+              reference: <PR/Issue/Discussion Links md format text
+            - code: RENEWAL_INITIATED
+              description: Describes if renewal has been initiated
+              reference: <PR/Issue/Discussion Links md format text
+            - code: INSPECTION_SUCCESSFUL
+              description: Describes if inspection has been successful
+              reference: <PR/Issue/Discussion Links md format text
+            - code: INSPECTION_REJECTED
+              description: Describes if renewal has been rejected
+              reference: <PR/Issue/Discussion Links md format text
+        source:
+          type:
+            - code: CONSUMER
+              description: Describes if renewal has been rejected
+              reference: <PR/Issue/Discussion Links md format text
+            - code: INTERFACING NP
+              description: Describes if renewal has been rejected
+              reference: <PR/Issue/Discussion Links md format text
+            - code: SELLER
+              description: Describes if renewal has been rejected
+              reference: <PR/Issue/Discussion Links md format text
+        status:
+          - code: OPEN
+            description: Describes the issue status
+            reference: <PR/Issue/Discussion Links md format text
+          - code: CLOSED
+            description: Describes the issue status
+            reference: <PR/Issue/Discussion Links md format text
+          - code: RESOLVED
+            description: Describes the issue status
+            reference: <PR/Issue/Discussion Links md format text
+        issue_type:
+          - code: ISSUE
+            description: Describes the issue type
+            reference: <PR/Issue/Discussion Links md format text
+          - code: GRIEVANCE
+            description: Describes the issue type
+            reference: <PR/Issue/Discussion Links md format text
+          - code: DISPUTE
+            description: Describes the issue type
+            reference: <PR/Issue/Discussion Links md format text
+        issue_actions:
+          complainant_actions:
+            complainant_action:
+              - code: OPEN
+                description: Describes the complainant_action
+                reference: <PR/Issue/Discussion Links md format text
+              - code: ESCALATE
+                description: Describes the complainant_action
+                reference: <PR/Issue/Discussion Links md format text
+              - code: CLOSE
+                description: Describes the complainant_action
+                reference: <PR/Issue/Discussion Links md format text
   on_issue:
-    message: *ref_0
+    message: &ref_0
+      issue:
+        catagory:
+          - code: FULFILMENT
+            description: >-
+              INSURANCE- related to the timely and accurate disbursement of the
+              loan.
+            reference: <PR/Issue/Discussion Links md format text
+          - code: ORDER
+            description: >-
+              INSURANCE - concerning the loan order and overall loan servicing
+              issues.
+            reference: <PR/Issue/Discussion Links md format text
+          - code: PAYMENT
+            description: >-
+              INSURANCE- pertaining to payments, interest, and charges
+              associated with the loan provided to the borrower.
+            reference: <PR/Issue/Discussion Links md format text
+        issue_actions:
+          respondent_action:
+            - code: PROCESSING
+              description: Describes the complainant_action
+              reference: <PR/Issue/Discussion Links md format text
+            - code: CASCADED,
+              description: Describes the complainant_action
+              reference: <PR/Issue/Discussion Links md format text
+            - code: RESOLVED
+              description: Describes the complainant_action
+              reference: <PR/Issue/Discussion Links md format text
   issue_status:
     message: *ref_0
   on_issue_status:
-    message: *ref_0
+    message:
+      issue_actions:
+        respondent_action:
+          - code: PROCESSING
+            description: Describes the complainant_action
+            reference: <PR/Issue/Discussion Links md format text
+          - code: CASCADED,
+            description: Describes the complainant_action
+            reference: <PR/Issue/Discussion Links md format text
+          - code: RESOLVED
+            description: Describes the complainant_action
+            reference: <PR/Issue/Discussion Links md format text
 x-tags:
   issue:
     message:
@@ -1169,7 +1285,7 @@ x-flows:
                   Buyer ->>+ Buyer App: Issue closed
         reference: if any
         example:
-          value:
+          value: &ref_1
             context:
               domain: ONDC:FIS12
               country: IND
@@ -1254,7 +1370,7 @@ x-flows:
                 Buyer ->>+ Buyer App:  ISSUE CLOSED
         reference: if any
         example:
-          value:
+          value: &ref_2
             context:
               domain: ONDC:FIS12
               country: IND
@@ -1311,7 +1427,7 @@ x-flows:
                 Buyer ->>+ Buyer App:  ISSUE CLOSED
         reference: if any
         example:
-          value:
+          value: &ref_3
             context:
               domain: ONDC:FIS12
               country: IND
@@ -1352,7 +1468,7 @@ x-flows:
                 Buyer ->>+ Buyer App:  ISSUE CLOSED
         reference: if any
         example:
-          value:
+          value: &ref_4
             context:
               domain: ONDC:FIS12
               country: IND
@@ -1414,6 +1530,79 @@ x-flows:
                   action_triggered: CANCEL
                   refund_amount: '100'
 x-examples:
+  igm:
+    summary: IGM moter insurance implementation
+    description: IGM  motor insurance examples
+    example_set:
+      issue:
+        examples:
+          - summary: issue
+            description: TBD
+            value: *ref_1
+      on_issue:
+        examples:
+          - summary: on_issue
+            description: TBD
+            value: *ref_2
+      issue_status:
+        examples:
+          - summary: issue_status
+            description: TBD
+            value: *ref_3
+      on_issue_status:
+        examples:
+          - summary: on_issue_status
+            description: TBD
+            value: *ref_4
+      issue_closed:
+        examples:
+          - summary: issue_closed
+            description: TBD
+            value:
+              context:
+                domain: ONDC:FIS12
+                country: IND
+                city: '*'
+                action: issue
+                core_version: 1.0.0
+                bap_id: buyerapp.com
+                bap_uri: https://buyerapp.com/ondc
+                bpp_id: sellerapp.com
+                bpp_uri: https://sellerapp.com/ondc
+                transaction_id: T1
+                message_id: M1
+                timestamp: '2023-01-15T10:10:01.142Z'
+              message:
+                issue:
+                  id: b6f88798-baae-4534-9b47-0a95a5054997
+                  status: CLOSED
+                  issue_actions:
+                    complainant_actions:
+                      - complainant_action: OPEN
+                        short_desc: test, Complaint created
+                        updated_at: 2023-12-19T12:25:12.974Z
+                        updated_by:
+                          org:
+                            name: sellerapp.com/ondc
+                          contact:
+                            phone: '9963548005'
+                            email: buyer@adya.ai
+                          person:
+                            name: Buyer Admin
+                      - complainant_action: CLOSE
+                        short_desc: Complaint closed
+                        updated_at: 2023-12-19T13:06:39.576Z
+                        updated_by:
+                          org:
+                            name: preprod.ondc.adya.ai::ONDC:RET12
+                          contact:
+                            phone: '9963548005'
+                            email: buyer@adya.ai
+                          person:
+                            name: Buyer Admin
+                  rating: THUMBS-UP
+                  created_at: 2023-12-19T12:25:12.974Z
+                  updated_at: 2023-12-19T13:06:39.576Z
   Motor_igm:
     summary: IGM moter insurance implementation
     description: IGM  motor insurance examples
