@@ -196,13 +196,13 @@ on_issue:
         reference: <PR/Issue/Discussion Links md format text     
 
 issue_status:
-  # message: &message
+  message: *message
  
 
  
 on_issue_status:
   message: &message
-   issue:
+  
     issue_actions:
      respondent_action:
       - code: PROCESSING 
