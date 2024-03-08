@@ -43,7 +43,7 @@ message:
       duration: PT2H
     expected_resolution_time:
       duration: P1D
-    status: OPEN
+    status: OPEN 
     issue_type: ISSUE
     issue_actions:
       complainant_actions:
