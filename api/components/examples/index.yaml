@@ -1,8 +1,8 @@
-# igm : 
-#  summary: IGM moter insurance implementation
-#  description: IGM  motor insurance examples
-#  example_set:
-#    $ref: "./igm/index.yaml"
+igm : 
+ summary: IGM moter insurance implementation
+ description: IGM  motor insurance examples
+ example_set:
+   $ref: "./igm/index.yaml"
 Motor_igm : 
  summary: IGM moter insurance implementation
  description: IGM  motor insurance examples
