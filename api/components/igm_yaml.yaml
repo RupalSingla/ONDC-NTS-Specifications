@@ -511,11 +511,9 @@ components:
         created_at:
           description: timestamp for the creation of the issue
           type: string
-          format: date-time
         updated_at:
           description: timestamp for the capturing the time an issue was last updated
           type: string
-          format: date-time
       required:
         - id
         - created_at
