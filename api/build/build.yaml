@@ -1238,7 +1238,7 @@ x-tags:
                 description: Maximum amount for the loan which a borrower can take
                 reference: <PR/Issue/Discussion Links md format text>
 x-flows:
-  - summary: IGM Flow
+  - summary: IGM
     details:
       - description: detailed flow
         mermaid: |-
@@ -1283,7 +1283,7 @@ x-flows:
                   Buyer ->>+ Buyer App: Issue closed
         reference: if any
         example:
-          value: &ref_1
+          value:
             context:
               domain: ONDC:FIS12
               country: IND
@@ -1368,7 +1368,7 @@ x-flows:
                 Buyer ->>+ Buyer App:  ISSUE CLOSED
         reference: if any
         example:
-          value: &ref_2
+          value:
             context:
               domain: ONDC:FIS12
               country: IND
@@ -1425,7 +1425,7 @@ x-flows:
                 Buyer ->>+ Buyer App:  ISSUE CLOSED
         reference: if any
         example:
-          value: &ref_3
+          value:
             context:
               domain: ONDC:FIS12
               country: IND
@@ -1466,7 +1466,7 @@ x-flows:
                 Buyer ->>+ Buyer App:  ISSUE CLOSED
         reference: if any
         example:
-          value: &ref_4
+          value:
             context:
               domain: ONDC:FIS12
               country: IND
@@ -1528,79 +1528,6 @@ x-flows:
                   action_triggered: CANCEL
                   refund_amount: '100'
 x-examples:
-  igm:
-    summary: IGM moter insurance implementation
-    description: IGM  motor insurance examples
-    example_set:
-      issue:
-        examples:
-          - summary: issue
-            description: TBD
-            value: *ref_1
-      on_issue:
-        examples:
-          - summary: on_issue
-            description: TBD
-            value: *ref_2
-      issue_status:
-        examples:
-          - summary: issue_status
-            description: TBD
-            value: *ref_3
-      on_issue_status:
-        examples:
-          - summary: on_issue_status
-            description: TBD
-            value: *ref_4
-      issue_closed:
-        examples:
-          - summary: issue_closed
-            description: TBD
-            value:
-              context:
-                domain: ONDC:FIS12
-                country: IND
-                city: '*'
-                action: issue
-                core_version: 1.0.0
-                bap_id: buyerapp.com
-                bap_uri: https://buyerapp.com/ondc
-                bpp_id: sellerapp.com
-                bpp_uri: https://sellerapp.com/ondc
-                transaction_id: T1
-                message_id: M1
-                timestamp: '2023-01-15T10:10:01.142Z'
-              message:
-                issue:
-                  id: b6f88798-baae-4534-9b47-0a95a5054997
-                  status: CLOSED
-                  issue_actions:
-                    complainant_actions:
-                      - complainant_action: OPEN
-                        short_desc: test, Complaint created
-                        updated_at: '2023-12-19T12:25:12.974Z'
-                        updated_by:
-                          org:
-                            name: sellerapp.com/ondc
-                          contact:
-                            phone: '9963548005'
-                            email: buyer@adya.ai
-                          person:
-                            name: Buyer Admin
-                      - complainant_action: CLOSE
-                        short_desc: Complaint closed
-                        updated_at: '2023-12-19T13:06:39.576Z'
-                        updated_by:
-                          org:
-                            name: preprod.ondc.adya.ai::ONDC:RET12
-                          contact:
-                            phone: '9963548005'
-                            email: buyer@adya.ai
-                          person:
-                            name: Buyer Admin
-                  rating: THUMBS-UP
-                  created_at: '2023-12-19T12:25:12.974Z'
-                  updated_at: '2023-12-19T13:06:39.576Z'
   Motor_igm:
     summary: IGM moter insurance implementation
     description: IGM  motor insurance examples
