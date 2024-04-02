@@ -16,7 +16,7 @@ async function buildAttribiutes() {
   }
   if (Object.keys(attributes)?.length) {
     const attributesYaml = yaml.dump(attributes);
-    fs.writeFileSync(`./attributes/IGM/index.yaml`, attributesYaml);
+    fs.writeFileSync(`./attributes/RSF/index.yaml`, attributesYaml);
   }
 }
 function formObject(attributes) {

@@ -2,7 +2,7 @@
 #    examples:
 #     value:
 #       $ref: "./issue/issue.yaml"
-collecto_recon:
+collector_recon:
   examples:
     - summary: collector_recon
       description: TBD
