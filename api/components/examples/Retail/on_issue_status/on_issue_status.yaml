@@ -8,8 +8,8 @@ context:
   bap_uri: https://buyer-app-preprod-v2.ondc.org/protocol/v1
   bpp_uri: https://ondc-seller-preprod.chattybao.com/ondc/bpp
   transaction_id: bab28a40-7c1d-4930-a789-5018e3414ed5
-  message_id: 6bab8e70-9e33-11ee-a565-2dc9548dc8e8
-  timestamp: "2023-12-19T06:06:19.239Z"
+  message_id: M2
+  timestamp: T1
   bpp_id: ondc-seller-preprod.chattybao.com/ondc
   ttl: PT30S
 message:
